@@ -1,23 +1,71 @@
-document.getElementById('preload').innerHTML = `
-<div class="waveform">
-  <div class="element-one"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="element-two"></div>
-</div>
+const contentArea = document.createElement('div');
+contentArea.classList.add('content-area');
+contentArea.innerHTML = document.body.innerHTML;
+document.body.innerHTML = '';
+
+const waveform = document.createElement('div');
+const bracketOne = document.createElement('div');
+const bracketTwo = document.createElement('div');
+
+bracketOne.classList.add('element-one');
+bracketTwo.classList.add('element-two');
+waveform.classList.add('waveform');
+waveform.append(bracketOne);
+
+for (let i = 0; i < 15; i++){
+  const line = document.createElement('div');
+  line.classList.add('line');
+  waveform.append(line);
+}
+
+waveform.append(bracketTwo);
+document.body.append(waveform);
+
+const panelColumnOne = document.createElement('div');
+const panelColumnTwo = document.createElement('div');
+const numberOfPanels = Math.round((innerHeight - 5) / 130);
+const colors = ['light-blue', 'dark-blue', 'light-gray', 'dark-gray'];
+
+let digits = String(numberOfPanels).length;
+digits = digits === 1 ? 2 : digits;
+panelColumnOne.classList.add('panel-column');
+panelColumnTwo.classList.add('panel-column');
+
+for (let i = 0; i < numberOfPanels; i++){
+  const panelOne = document.createElement('div');
+  const panelTwo = document.createElement('div');
+  const panelOneText = document.createElement('span');
+  const panelTwoText = document.createElement('span');
+  const colorOne = colors[r(colors.length)];
+  const colorTwo = colors[r(colors.length)];
+  const prefix = String(i + 1).padStart(digits, 0);
+  
+  panelOne.classList.add(colorOne, 'panel2');
+  panelTwo.classList.add(colorTwo, 'panel');
+  panelOneText.classList.add('margin');
+  panelTwoText.classList.add('margin');
+  panelOneText.innerText = i === 0 ? 'LCARS 40274' : prefix + '-' + r(10) + r(10) + r(10) + r(10) + r(10) + r(10);
+  panelTwoText.innerText = i === 0 ? 'LCARS 40274' : prefix + '-' + String(r(1000000)).padStart(6, 0);
+  panelOne.append(panelOneText);
+  panelTwo.append(panelTwoText);
+}
+
+document.body.append(panelColumnOne);
+document.body.append(panelColumnTwo);
+
+const siteHeading = document.createElement('h1');
+siteHeading.innerText = 'LCARS Database';
+document.body.append(siteHeading);
+
+
+
+
+
+
+document.body.append(contentArea);
+
+
+document.body.innerHTML += `
 <div class="button sidebar-1 left-facing red" onclick="beep0()"><span class="margin">03-975683</span></div>
 <div class="button sidebar-2 left-facing light-gray" onclick="beep0()"><span class="margin">04-765466</span></div>
 <div class="button sidebar-3 left-facing dark-blue" onclick="beep0()"><span class="margin">05-224353</span></div>
@@ -39,27 +87,6 @@ document.getElementById('preload').innerHTML = `
 <div class="button sidebar-10 right-facing light-gray" onclick="beep0()"><span class="margin">03-975683</span></div>
 <div class="button sidebar-11 right-facing red" onclick="beep0()"><span class="margin">04-765466</span></div>
 <div class="button sidebar-12 right-facing dark-blue" onclick="beep0()"><span class="margin">05-224353</span></div>
-<div class="panel2 one light-blue"><span class="margin">LCARS 40274</span></div>
-<div class="panel2 two light-gray"><span class="margin">02-654598</span></div>
-<div class="panel2 three dark-blue"><span class="margin">03-975683</span></div>
-<div class="panel2 four light-gray"><span class="margin">04-765466</span></div>
-<div class="panel2 five dark-gray"><span class="margin">05-224353</span></div>
-<div class="panel2 six light-gray"><span class="margin">06-576565</span></div>
-<div class="panel2 seven dark-blue"><span class="margin">07-395476</span></div>
-<div class="panel2 eight red"><span class="margin">08-849204</span></div>
-<div class="panel2 nine light-gray"><span class="margin">09-938495</span></div>
-<div class="panel2 ten dark-blue"><span class="margin">10-194829</span></div>
-<div class="panel one light-blue"><span class="margin">LCARS 40274</span></div>
-<div class="panel two dark-blue"><span class="margin">02-654598</span></div>
-<div class="panel three dark-blue"><span class="margin">03-975683</span></div>
-<div class="panel four light-gray"><span class="margin">04-765466</span></div>
-<div class="panel five light-gray"><span class="margin">05-224353</span></div>
-<div class="panel six light-blue"><span class="margin">06-576565</span></div>
-<div class="panel seven red"><span class="margin">07-395476</span></div>
-<div class="panel eight red"><span class="margin">08-849204</span></div>
-<div class="panel nine light-gray"><span class="margin">09-938495</span></div>
-<div class="panel ten dark-blue"><span class="margin">10-194829</span></div>
-<h1>LCARS Database</h1>
 <table class="cascade">
   <tr>
     <td>2385</td>
@@ -360,3 +387,7 @@ function stardateCalculator(selector){
 stardateCalculator('.stardate');
 stardateCalculator('.currentStardate');
 setInterval(stardateCalculator, 1000, '.currentStardate');
+
+function r(i){
+  return Math.floor(Math.random() * i);
+}
