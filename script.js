@@ -48,6 +48,8 @@ for (let i = 0; i < numberOfPanels; i++){
   panelTwoText.innerText = i === 0 ? 'LCARS 40274' : prefix + '-' + String(r(1000000)).padStart(6, 0);
   panelOne.append(panelOneText);
   panelTwo.append(panelTwoText);
+  panelColumnOne.append(panelOne);
+  panelColumnTwo.append(panelTwo);
 }
 
 document.body.append(panelColumnOne);
