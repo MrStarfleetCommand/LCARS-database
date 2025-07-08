@@ -99,6 +99,10 @@ div.version-info{
   width:365px;
 }
 
+:root .hidden{
+  display:none;
+}
+
 /* Font */
 
 @font-face{
