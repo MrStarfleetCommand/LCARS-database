@@ -55,6 +55,15 @@ for (let i = 0; i < numberOfPanels; i++){
 document.body.append(panelColumnOne);
 document.body.append(panelColumnTwo);
 
+addEventListener('resize', () => {
+  const panels = document.querySelectorAll('.panel-column > div');
+  const visiblePanelCount = Math.round((innerHeight - 5) / 130);
+  const overflowPanels = document.querySelectorAll(`.panel-column > :nth-child(${visiblePanelCount}) ~ div`);
+  
+  panels.forEach(panel => panel.removeAttribute('style'));
+  overflowPanels.forEach(panel => panel.style.display = 'none');
+})
+
 const siteHeading = document.createElement('h1');
 siteHeading.innerText = 'LCARS Database';
 document.body.append(siteHeading);
