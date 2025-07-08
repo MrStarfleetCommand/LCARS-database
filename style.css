@@ -127,21 +127,20 @@ div.version-info{
 
 /* Sidebar */
 
-.waveform + .panel-column{
+.panel-column{
   width:180px;
   display:grid;
   row-gap:5px;
   grid-template-rows:repeat(auto-fill, 125px);
   position:fixed;
   top:5px;
+  bottom:5px;
+}
+.waveform + .panel-column{
   left:375px;
 }
 
 .panel-column + .panel-column{
-  width:180px;
-  display:grid;
-  position:fixed;
-  top:5px;
   left:560px;
 }
 
