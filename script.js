@@ -23,7 +23,7 @@ document.body.append(waveform);
 
 const panelColumnOne = document.createElement('div');
 const panelColumnTwo = document.createElement('div');
-const numberOfPanels = Math.round((innerHeight - 5) / 130);
+const numberOfPanels = Math.round((screen.height - 5) / 130);
 const colors = ['light-blue', 'dark-blue', 'light-gray', 'dark-gray'];
 
 let digits = String(numberOfPanels).length;
