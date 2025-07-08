@@ -135,7 +135,7 @@ div.version-info{
   width:180px;
   display:grid;
   row-gap:5px;
-  grid-template-rows:repeat(auto-fill, 125px);
+  grid-template-rows:125px 125px;
   position:fixed;
   top:5px;
   bottom:5px;
@@ -720,7 +720,7 @@ div.line:nth-child(16){
     top:70px;
   }
   .panel-column{
-    grid-template-rows:60px 85px 166px repeat(auto-fill, 125px);
+    grid-template-rows:60px 85px;
   }
   div.number-one{
     top:135px;
