@@ -40,6 +40,8 @@ for (let i = 0; i < numberOfPanels; i++){
   const colorTwo = colors[r(colors.length)];
   const prefix = String(i + 1).padStart(digits, 0);
   
+  panelOne.classList.add(colorOne);
+  panelTwo.classList.add(colorTwo);
   panelOneText.classList.add('margin');
   panelTwoText.classList.add('margin');
   panelOneText.innerText = i === 0 ? 'LCARS 40274' : prefix + '-' + r(10) + r(10) + r(10) + r(10) + r(10) + r(10);
