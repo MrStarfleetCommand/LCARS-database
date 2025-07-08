@@ -151,11 +151,11 @@ div.version-info{
   justify-content:right;
 }
 
-.panel-column > :nth-child(2){
+.panel-column + .panel-column > :nth-child(2){
   border-radius:0 0 0 50px;
 }
 
-.panel-column > :nth-child(3){
+.panel-column + .panel-column > :nth-child(3){
   border-radius:50px 0 0 0;
 }
 
@@ -1117,9 +1117,9 @@ div.line:nth-child(16){
     div.panel{
       border-radius:0;
     }
-    .panel-column > :nth-child(2),
-    .panel-column > :nth-child(3){
-      border-radius:0!important;
+    .panel-column + .panel-column > :nth-child(2),
+    .panel-column + .panel-column > :nth-child(3){
+      border-radius:0;
     }
     div.scrollbox{
       top:135px;
