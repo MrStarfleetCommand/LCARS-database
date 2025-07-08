@@ -55,14 +55,8 @@ for (let i = 0; i < numberOfPanels; i++){
 document.body.append(panelColumnOne);
 document.body.append(panelColumnTwo);
 
-addEventListener('resize', () => {
-  const panels = document.querySelectorAll('.panel-column > div');
-  const visiblePanelCount = Math.round((innerHeight - 5) / 130);
-  const overflowPanels = document.querySelectorAll(`.panel-column > :nth-child(${visiblePanelCount}) ~ div`);
-  
-  panels.forEach(panel => panel.removeAttribute('style'));
-  overflowPanels.forEach(panel => panel.style.display = 'none');
-})
+hideExcessPanels();
+addEventListener('resize', hideExcessPanels);
 
 const siteHeading = document.createElement('h1');
 siteHeading.innerText = 'LCARS Database';
@@ -401,4 +395,13 @@ setInterval(stardateCalculator, 1000, '.currentStardate');
 
 function r(i){
   return Math.floor(Math.random() * i);
+}
+
+function hideExcessPanels(){
+  const wantedPanelCount = Math.round((innerHeight - 5) / 130);
+  const wantedPanels = document.querySelectorAll(`.panel-column > div:not(:nth-child(${wantedPanelCount}) ~ div)`);
+  const excessPanels = document.querySelectorAll(`.panel-column > :nth-child(${wantedPanelCount}) ~ div`);
+  
+  wantedPanels.forEach(panel => panel.classList.remove('hidden'));
+  excessPanels.forEach(panel => panel.classList.add('hidden'));
 }
