@@ -713,140 +713,43 @@ div.line:nth-child(16){
 
 /* Responsive Formatting */
 
-@media(max-height:1369px){
-  .panel-column > :nth-child(10){
-    bottom:5px;
-  }
-}
-
-@media(min-height:1239px){
-  .panel-column > :nth-child(9){
-    height:125px;
-  }
-}
-
-@media(max-height:1239px){
-  .panel-column > :nth-child(10){
-    display:none;
-  }
-  .panel-column > :nth-child(9){
-    bottom:5px;
-  }
-}
-
-@media(min-height:1109px){
-  .panel-column > :nth-child(8){
-    height:125px;
-  }
-}
-
-@media(max-height:1109px){
-  .panel-column > :nth-child(9){
-    display:none;
-  }
-  .panel-column > :nth-child(8){
-    bottom:5px;
-  }
-}
-
-@media(min-height:979px){
-  .panel-column > :nth-child(7){
-    height:125px;
-  }
-}
-
-@media(max-height:979px){
-  .panel-column > :nth-child(8){
-    display:none;
-  }
-  .panel-column > :nth-child(7){
-    bottom:5px;
-  }
-}
-
-@media(min-height:849px){
-  .panel-column > :nth-child(6){
-    height:125px;
-  }
-}
-
 @media(max-height:849px){
-  div.version-info,
-  .panel-column > :nth-child(7){
+  div.version-info{
     display:none;
-  }
-  .panel-column > :nth-child(6){
-    bottom:5px;
-  }
-}
-
-@media(min-height:719px){
-  .panel-column > :nth-child(5){
-    height:125px;
-  }
-}
-
-@media(max-height:719px){
-  .panel-column > :nth-child(6){
-    display:none;
-  }
-  .panel-column > :nth-child(5){
-    bottom:5px;
   }
 }
 
 @media(max-height:654px){
-  div.sidebar-7,div.sidebar-10{
+  div.sidebar-7,
+  div.sidebar-10{
     display:none;
-  }
-}
-
-@media(min-height:589px){
-  .panel-column > :nth-child(4){
-    height:125px;
   }
 }
 
 @media(max-height:589px){
-  .panel-column > :nth-child(5),
   div.sidebar-8,
   div.sidebar-11{
     display:none;
   }
-  .panel-column > :nth-child(4){
-    bottom:5px;
-  }
-}
-
-@media(min-height:524px){
-  .panel-column > :nth-child(3){
-    height:125px;
-  }
 }
 
 @media(max-height:524px){
-  h1,div.sidebar-3,div.sidebar-6{
+  h1,
+  div.sidebar-3,
+  div.sidebar-6{
     display:none;
   }
-  table.cascade,a.header-one,a.header-two{
+  table.cascade,
+  a.header-one,
+  a.header-two{
     top:5px;
   }
-  a.header-three,a.header-four{
+  a.header-three,
+  a.header-four{
     top:70px;
   }
-  .panel-column > :nth-child(1){
-    height:60px;
-  }
-  .panel-column > :nth-child(2){
-    top:70px;
-    height:85px;
-  }
-  .panel-column > :nth-child(3){
-    top:160px;
-    height:166px;
-  }
-  .panel-column > :nth-child(4){
-    top:330px;
+  .panel-column{
+    grid-template-rows:60px 85px 166px repeat(auto-fill, 125px);
   }
   div.number-one{
     top:135px;
@@ -866,13 +769,25 @@ div.line:nth-child(16){
 }
 
 @media(max-height:459px){
-  div.sidebar-2,div.sidebar-5{
+  div.sidebar-2,
+  div.sidebar-5{
     display:none;
   }
 }
 
 @media(max-height:394px){
-   div.bar,div.bar-break,div.bar-continued,div.marker,div.panel,div.panel2,div.waveform,table.cascade,div.sidebar-1,div.sidebar-4,div.sidebar-9,div.sidebar-12{
+   div.bar,
+  div.bar-break,
+  div.bar-continued,
+  div.marker,
+  div.panel,
+  div.panel2,
+  div.waveform,
+  table.cascade,
+  div.sidebar-1,
+  div.sidebar-4,
+  div.sidebar-9,
+  div.sidebar-12{
     display:none!important;
   }
   div.scrollbox{
@@ -1183,14 +1098,20 @@ div.line:nth-child(16){
   h1{
     font-size:3.5em!important;
   }
-  a.header-one,a.header-three{
+  a.header-one,
+  a.header-three{
     right:195px;
   }
-  a.header-two,a.header-four{
+  a.header-two,
+  a.header-four{
     right:10px;
   }
   @media(max-height:589px){
-    div.bar,div.bar-break,div.bar-continued,div.marker,h1{
+    div.bar,
+    div.bar-break,
+    div.bar-continued,
+    div.marker,
+    h1{
       display:none;
     }
     div.panel{
@@ -1204,15 +1125,20 @@ div.line:nth-child(16){
       top:135px;
       right:30px;
     }
-    a.header-one,a.header-two{
+    a.header-one,
+    a.header-two{
       top:5px;
     }
-    a.header-three,a.header-four{
+    a.header-three,
+    a.header-four{
       top:70px;
     }
   }
   @media(max-height:524px){
-    a.header-one,a.header-two,a.header-three,a.header-four{
+    a.header-one,
+    a.header-two,
+    a.header-three,
+    a.header-four{
       display:none;
     }
     div.scrollbox{
