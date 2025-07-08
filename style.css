@@ -127,20 +127,29 @@ div.version-info{
 
 /* Sidebar */
 
-.panel2{
-  display:flex;
+.waveform + .panel-column{
   width:180px;
-  justify-content:right;
+  display:grid;
+  row-gap:5px;
+  grid-template-rows:repeat(auto-fill, 125px);
   position:fixed;
+  top:5px;
   left:375px;
 }
 
+.panel-column + .panel-column{
+  width:180px;
+  display:grid;
+  position:fixed;
+  top:5px;
+  left:560px;
+}
+
+.panel2,
 .panel{
   display:flex;
   width:180px;
   justify-content:right;
-  position:fixed;
-  left:560px;
 }
 
 .panel-column > :nth-child(2){
@@ -152,54 +161,42 @@ div.version-info{
 }
 
 .panel-column > :nth-child(1){
-  height:125px;
-  top:5px;
   align-items:end;
 }
 
 .panel-column > :nth-child(2){
-  height:125px;
-  top:135px;
   align-items:start;
 }
 
 .panel-column > :nth-child(3){
-  top:265px;
   align-items:end;
 }
 
 .panel-column > :nth-child(4){
-  top:395px;
   align-items:end;
 }
 
 .panel-column > :nth-child(5){
-  top:525px;
   align-items:end;
 }
 
 .panel-column > :nth-child(6){
-  top:655px;
   align-items:end;
 }
 
 .panel-column > :nth-child(7){
-  top:785px;
   align-items:end;
 }
 
 .panel-column > :nth-child(8){
-  top:915px;
   align-items:end;
 }
 
 .panel-column > :nth-child(9){
-  top:1045px;
   align-items:end;
 }
 
 .panel-column > :nth-child(10){
-  top:1175px;
   align-items:end;
 }
 
