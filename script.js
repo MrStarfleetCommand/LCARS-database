@@ -42,7 +42,7 @@ for (let i = 0; i < numberOfPanels; i++){
   let paletteOne;
   let paletteTwo;
   
-  if (i < 2 || i % 7 === 2 || i % 7 === 4 || i % 7 === 5){
+  if (i < 2){
     paletteOne = blues;
     paletteTwo = blues;
   } else if (i === 2){
@@ -53,6 +53,9 @@ for (let i = 0; i < numberOfPanels; i++){
     paletteTwo = blues;
   } else if (i % 7 === 1 || i % 7 === 3){
     paletteOne = grays;
+    paletteTwo = blues;
+  } else if (i % 7 === 2 || i % 7 === 4 || i % 7 === 5){
+    paletteOne = blues;
     paletteTwo = blues;
   } else if (i % 7 === 6){
     paletteOne = blues;
