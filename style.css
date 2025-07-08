@@ -144,8 +144,7 @@ div.version-info{
   left:560px;
 }
 
-.panel2,
-.panel{
+.panel-column > div{
   display:flex;
   width:180px;
   justify-content:right;
@@ -159,44 +158,12 @@ div.version-info{
   border-radius:50px 0 0 0;
 }
 
-.panel-column > :nth-child(1){
+.panel-column > :not(:nth-child(2)){
   align-items:end;
 }
 
 .panel-column > :nth-child(2){
   align-items:start;
-}
-
-.panel-column > :nth-child(3){
-  align-items:end;
-}
-
-.panel-column > :nth-child(4){
-  align-items:end;
-}
-
-.panel-column > :nth-child(5){
-  align-items:end;
-}
-
-.panel-column > :nth-child(6){
-  align-items:end;
-}
-
-.panel-column > :nth-child(7){
-  align-items:end;
-}
-
-.panel-column > :nth-child(8){
-  align-items:end;
-}
-
-.panel-column > :nth-child(9){
-  align-items:end;
-}
-
-.panel-column > :nth-child(10){
-  align-items:end;
 }
 
 /* Data Cascade */
