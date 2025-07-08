@@ -24,7 +24,8 @@ document.body.append(waveform);
 const panelColumnOne = document.createElement('div');
 const panelColumnTwo = document.createElement('div');
 const numberOfPanels = Math.round((screen.height - 5) / 130);
-const colors = ['light-blue', 'dark-blue', 'light-gray', 'dark-gray'];
+const blues = ['light-blue', 'dark-blue'];
+const grays = ['light-gray', 'dark-gray'];
 
 let digits = String(numberOfPanels).length;
 digits = digits === 1 ? 2 : digits;
@@ -36,9 +37,27 @@ for (let i = 0; i < numberOfPanels; i++){
   const panelTwo = document.createElement('div');
   const panelOneText = document.createElement('span');
   const panelTwoText = document.createElement('span');
-  const colorOne = colors[r(colors.length)];
-  const colorTwo = colors[r(colors.length)];
   const prefix = String(i + 1).padStart(digits, 0);
+  
+  let paletteOne;
+  let paletteTwo;
+  
+  if (i < 3 || i % 7 === 2 || i % 7 === 4 || i % 7 === 5){
+    paletteOne = blues;
+    paletteTwo = blues;
+  } else if (i % 7 === 1 || i % 7 === 3){
+    paletteOne = grays;
+    paletteTwo = blues;
+  } else if (i % 7 === 6){
+    paletteOne = blues;
+    paletteTwo = grays;
+  } else if (!(i % 7)){
+    paletteOne = grays;
+    paletteTwo = grays;
+  }
+  
+  const colorOne = paletteOne[r(paletteOne.length)];
+  const colorTwo = paletteTwo[r(paletteTwo.length)];
   
   panelOne.classList.add(colorOne);
   panelTwo.classList.add(colorTwo);
